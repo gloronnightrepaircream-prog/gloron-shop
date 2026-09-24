@@ -1,0 +1,25 @@
+RewriteEngine On
+
+# Force HTTPS
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://gloron.shop%{REQUEST_URI} [R=301,L]
+
+# Use the non-www domain as the canonical host
+RewriteCond %{HTTP_HOST} ^www\.gloron\.shop$ [NC]
+RewriteRule ^ https://gloron.shop%{REQUEST_URI} [R=301,L]
+
+# Serve the homepage by default
+DirectoryIndex index.html
+
+# Basic browser caching for static assets
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType video/mp4 "access plus 7 days"
+</IfModule>
+
+ErrorDocument 404 /index.html

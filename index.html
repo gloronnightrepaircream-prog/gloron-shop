@@ -34,7 +34,7 @@
 </head>
 <body>
 <header><a class="brand" href="#top">GLORON <small>BEAUTY</small></a><button class="menu">☰</button>
-<nav><a href="#shop">Shop</a><a href="#ingredients">Ingredients</a><a href="#how">How to Use</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button id="cartBtn">Cart <b id="count">0</b></button></nav></header>
+<nav><a href="#shop">Shop</a><a href="#ingredients">Ingredients</a><a href="#how">How to Use</a><a href="#reviews">Reviews</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><!-- Old homemade cart button is hidden. The Shopify cart button now floats on the page. --><button id="cartBtn" style="display:none">Cart <b id="count">0</b></button></nav></header>
 
 <main id="top">
 <section class="hero"><video autoplay muted loop playsinline poster="assets/gloron-product-closed.png"><source src="assets/gloron-product-video.mp4" type="video/mp4"></video><div class="shade"></div>
@@ -49,7 +49,113 @@
 <section class="section product" id="shop"><div><img class="mainImg" src="assets/gloron-product-open.png" alt="GLORON Night Repair Cream open jar"><div class="thumbs"><img src="assets/gloron-product-closed.png" alt="Closed jar"><img src="assets/product-label.jpeg" alt="Product label"></div></div>
 <div><span>NIGHT REPAIR CREAM · 30 G</span><h2>GLORON Night Repair Cream</h2><div class="price">₹1,599</div><p>Rich yet comfortable nighttime care formulated for hydration, nourishment and a smoother, brighter-looking complexion.</p>
 <ul><li>Niacinamide 4%</li><li>Alpha-Arbutin 2%</li><li>Kojic Acid 1%</li><li>Glycerin 4%</li><li>Sweet Almond Oil 8%</li><li>Saffron Extract 0.1%</li></ul>
-<button class="btn dark" id="add">ADD TO CART</button> <button class="btn gold" id="buy">BUY NOW</button><small class="note">Prepaid orders only · UPI, cards and net banking after Razorpay activation.</small></div></section>
+
+<!-- Old buttons are kept but hidden so js/main.js does not break. Shopify Buy Button is below. -->
+<div hidden style="display:none"><button class="btn dark" id="add">ADD TO CART</button> <button class="btn gold" id="buy">BUY NOW</button></div>
+
+<!-- SHOPIFY BUY BUTTON START -->
+<div id="product-component-1791868651921"></div>
+<script type="text/javascript">
+/*<![CDATA[*/
+(function () {
+  var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+  if (window.ShopifyBuy) {
+    if (window.ShopifyBuy.UI) {
+      ShopifyBuyInit();
+    } else {
+      loadScript();
+    }
+  } else {
+    loadScript();
+  }
+  function loadScript() {
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = scriptURL;
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+    script.onload = ShopifyBuyInit;
+  }
+  function ShopifyBuyInit() {
+    var client = ShopifyBuy.buildClient({
+      domain: 'bp0feh-rz.myshopify.com',
+      storefrontAccessToken: '91bef2bad511ff2b4c5c829bfd80c1dc',
+    });
+    ShopifyBuy.UI.onReady(client).then(function (ui) {
+      ui.createComponent('product', {
+        id: '8119832281166',
+        node: document.getElementById('product-component-1791868651921'),
+        moneyFormat: 'Rs.%20%7B%7Bamount%7D%7D',
+        options: {
+          "product": {
+            "contents": {
+              "img": false,
+              "title": false,
+              "price": false,
+              "button": true
+            },
+            "styles": {
+              "product": {
+                "max-width": "100%",
+                "margin-left": "0",
+                "margin-bottom": "0",
+                "@media (min-width: 601px)": {
+                  "max-width": "100%",
+                  "margin-left": "0",
+                  "margin-bottom": "0"
+                }
+              },
+              "button": {
+                "background-color": "#c9a24b",
+                "color": "#0b1530",
+                "font-weight": "700",
+                "letter-spacing": "1px",
+                "padding-left": "36px",
+                "padding-right": "36px",
+                ":hover": { "background-color": "#b58f3c", "color": "#0b1530" },
+                ":focus": { "background-color": "#b58f3c" }
+              }
+            },
+            "text": {
+              "button": "ADD TO CART"
+            }
+          },
+          "cart": {
+            "styles": {
+              "button": {
+                "background-color": "#c9a24b",
+                "color": "#0b1530",
+                "font-weight": "700",
+                ":hover": { "background-color": "#b58f3c", "color": "#0b1530" },
+                ":focus": { "background-color": "#b58f3c" }
+              }
+            },
+            "text": {
+              "title": "Your Cart",
+              "total": "Subtotal",
+              "button": "CHECKOUT"
+            }
+          },
+          "toggle": {
+            "styles": {
+              "toggle": {
+                "background-color": "#c9a24b",
+                ":hover": { "background-color": "#b58f3c" },
+                ":focus": { "background-color": "#b58f3c" }
+              },
+              "count": { "color": "#0b1530" },
+              "iconPath": { "fill": "#0b1530" }
+            }
+          }
+        }
+      });
+    });
+  }
+})();
+/*]]>*/
+</script>
+<!-- SHOPIFY BUY BUTTON END -->
+
+<small class="note">Prepaid orders only · UPI, cards and net banking at secure checkout.</small></div></section>
 
 <section class="section" id="ingredients"><span>KEY INGREDIENTS</span><h2>Thoughtful ingredients. <em>Simple ritual.</em></h2>
 <img class="wide" src="assets/ingredients.jpeg" alt="GLORON key ingredients">
@@ -78,5 +184,7 @@
 <footer id="contact"><div class="foot"><div><div class="brand">GLORON <small>BEAUTY</small></div><p>Night Care, Natural Glow.</p></div><div><h4>CONTACT</h4><p>+91 7039634993<br>gloronnightrepaircream@gmail.com</p><p>Shop No. 507, 5th Floor,<br>Sunriser Business Park, Road No. 16,<br>Near Kisan Nagar 2, Wagle Estate,<br>Thane, Maharashtra – 400604</p></div><div><h4>POLICIES</h4><p>Privacy Policy<br>Terms & Conditions<br>Shipping & Delivery<br>Returns & Replacements</p></div></div><div class="copyright">© 2026 GLORON BEAUTY · Cosmetic skincare product · For external use only.</div></footer>
 
 <div class="wa"><a href="https://wa.me/917039634993" target="_blank">WhatsApp</a></div>
-<aside id="drawer"><button id="close">×</button><h3>Your Cart</h3><div id="cartItems"></div><hr><p><b>Total: ₹<span id="total">0</span></b></p><button class="btn gold" id="checkout">PROCEED TO CHECKOUT</button><small>Live Razorpay credentials will be connected after verification.</small></aside>
+
+<!-- Old homemade cart drawer is kept but hidden so js/main.js does not break. -->
+<div hidden style="display:none"><aside id="drawer"><button id="close">×</button><h3>Your Cart</h3><div id="cartItems"></div><hr><p><b>Total: ₹<span id="total">0</span></b></p><button class="btn gold" id="checkout">PROCEED TO CHECKOUT</button><small>Live Razorpay credentials will be connected after verification.</small></aside></div>
 <script src="js/main.js"></script></body></html>

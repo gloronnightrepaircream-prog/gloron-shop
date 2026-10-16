@@ -22,4 +22,4 @@ DirectoryIndex index.html
   ExpiresByType video/mp4 "access plus 7 days"
 </IfModule>
 
-ErrorDocument 404 /index.html
+ErrorDocument 404 /404.html

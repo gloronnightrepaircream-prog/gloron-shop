@@ -1,4 +1,4 @@
-const price=1599;
+const price=1399;
 let qty=0;
 const drawer=document.getElementById('drawer');
 function render(){document.getElementById('count').textContent=qty;document.getElementById('total').textContent=(qty*price).toLocaleString('en-IN');document.getElementById('cartItems').innerHTML=qty?`<p>GLORON Night Repair Cream · 30 g × ${qty}</p>`:'<p>Your cart is empty.</p>'}
@@ -12,8 +12,8 @@ document.querySelector('.menu').onclick=()=>{const n=document.querySelector('nav
 
 // ---------------- REVIEW SYSTEM ----------------
 // Create a Supabase project, run supabase_reviews.sql, then paste your project URL/key here.
-const SUPABASE_URL='YOUR_SUPABASE_PROJECT_URL';
-const SUPABASE_ANON_KEY='YOUR_SUPABASE_ANON_KEY';
+const SUPABASE_URL='https://leqwgyjliyifxebickzs.supabase.co';
+const SUPABASE_ANON_KEY='sb_publishable_DbW1WivxOhEfo7yValBJmg_4JjzCtOC';
 const supabaseReady=SUPABASE_URL.startsWith('https://') && SUPABASE_ANON_KEY.length>20;
 const supabaseClient=supabaseReady?window.supabase.createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
 const rf=document.getElementById('reviewForm'), rl=document.getElementById('reviewList'), statusEl=document.getElementById('reviewStatus');

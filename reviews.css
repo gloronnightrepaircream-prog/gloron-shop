@@ -1,0 +1,6 @@
+.reviews h3{margin:0 0 14px;font-size:1.4rem}.lbl{font-weight:700;margin-bottom:6px}.card small{margin-top:5px}
+.starPick{display:flex;gap:2px;margin-bottom:14px}.starPick button{background:none;border:0;font-size:2rem;line-height:1;color:#b28535;cursor:pointer;padding:2px 3px;border-radius:6px}.starPick button:focus-visible,.btn:focus-visible{outline:2px solid #29221b;outline-offset:2px}
+.rsum{display:flex;gap:40px;align-items:center;flex-wrap:wrap;margin:6px 0 30px}.avg{display:flex;flex-direction:column}.avg strong{font:600 3.4rem/1 "Playfair Display",serif}.avg .stars{font-size:1.3rem}
+.bars{flex:1;min-width:240px;max-width:420px}.bars div{display:grid;grid-template-columns:28px 1fr 28px;gap:10px;align-items:center;font-size:.85rem}.bars i{height:8px;border-radius:9px;background:#ddd2c0;overflow:hidden}.bars u{display:block;height:100%;background:#b28535}
+.rtop{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.vb{font-size:.78rem;font-weight:700;color:#1f6b3f;background:#e3f2e8;border-radius:99px;padding:3px 10px}
+.rphoto{width:120px;height:120px;object-fit:cover;border-radius:10px;margin:4px 0 8px;display:block}.rby{display:flex;gap:10px;align-items:baseline}.rby small{margin:0}.review p{margin:8px 0}

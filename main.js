@@ -90,14 +90,13 @@ rf.onsubmit=async e=>{
   e.preventDefault();
   if(document.getElementById('website').value)return; // spam honeypot
   if(!sb){statusEl.textContent='Reviews are temporarily unavailable. Please try again later.';return}
-  const name=document.getElementById('rName').value.trim(),rating=Number(rr.value),text=rText.value.trim(),order=document.getElementById('rOrder').value.trim();
+  const name=document.getElementById('rName').value.trim(),rating=Number(rr.value),text=rText.value.trim();
   if(!name){statusEl.textContent='Please enter your name.';return}
   if(rating<1||rating>5){statusEl.textContent='Please choose a star rating.';return}
   if(text.length<MIN_CHARS){statusEl.textContent='Please write at least '+MIN_CHARS+' characters.';return}
   if(text.length>MAX_CHARS){statusEl.textContent='Please keep your review under '+MAX_CHARS+' characters.';return}
   const btn=document.getElementById('reviewSubmit');btn.disabled=true;btn.textContent='SUBMITTING…';statusEl.textContent='Submitting your review…';
   const row={name,rating,review_text:text,status:'pending'};
-  if(order)row.order_ref=order;
   try{
     if(picked.length){
       const urls=[];

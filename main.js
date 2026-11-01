@@ -27,10 +27,8 @@ const stars=n=>'★'.repeat(n)+'☆'.repeat(5-n);
 const when=d=>{try{return new Date(d).toLocaleDateString('en-IN',{day:'numeric',month:'short',year:'numeric'})}catch(e){return''}};
 const photoOk=u=>typeof u==='string'&&u.startsWith(SUPABASE_URL+'/storage/');
 
-// Star picker
-function paint(n){rr.value=n;[...sp.children].forEach((b,i)=>{b.textContent=i<n?'★':'☆';b.setAttribute('aria-checked',String(i+1===n))})}
-for(let i=1;i<=5;i++){const b=document.createElement('button');b.type='button';b.setAttribute('role','radio');b.setAttribute('aria-label',i+(i>1?' stars':' star'));b.onclick=()=>paint(i);sp.appendChild(b)}
-paint(5);
+// Star picker: the 5 stars are in index.html; this only resets them after sending
+function paint(n){if(window.setStars)window.setStars(n);else rr.value=n}
 
 // Character counter
 function count(){const n=rText.value.trim().length;rCount.textContent=n+' / '+MAX_CHARS+' characters'+(n<MIN_CHARS?' (minimum '+MIN_CHARS+')':'');}
